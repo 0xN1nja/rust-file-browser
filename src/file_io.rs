@@ -6,7 +6,7 @@ use std::fs::{self, *};
 use std::path::{self, *};
 
 pub struct FileManager {
-    
+
 }
 
 impl FileManager {
@@ -16,7 +16,8 @@ impl FileManager {
             for i in fs::read_dir(_path).unwrap() {
                 file_vec.push(i.expect("").file_name());
             }
-        } else {
+        } 
+        else {
             for i in fs::read_dir(env::current_dir().unwrap()).unwrap() {
                 file_vec.push(i.expect("").file_name());
             }
