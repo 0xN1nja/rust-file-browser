@@ -7,7 +7,7 @@ use std::path::{*,self};
 use file_io::{*};
 
 fn main(){
-    let var=get_files(Path::new("C:\\"));
+    let var=file_io::FileManager::get_files(Path::new("C:\\"));
     for i in var{
         println!("{:?}",i.to_str().expect(""));
     }

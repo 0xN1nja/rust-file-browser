@@ -5,7 +5,11 @@ use std::fs::{*,self};
 use std::env::{*,self};
 use std::path::{*,self};
 
-pub fn get_files(_path:&Path)->Vec<OsString>{
+pub struct FileManager{
+    
+}
+impl FileManager{
+    pub fn get_files(_path:&Path)->Vec<OsString>{
     let mut file_vec:Vec<OsString>=Vec::new();
     if path::Path::exists(_path){
         for i in fs::read_dir(_path).unwrap(){
@@ -18,4 +22,5 @@ pub fn get_files(_path:&Path)->Vec<OsString>{
         }
     }
     file_vec
+}
 }
